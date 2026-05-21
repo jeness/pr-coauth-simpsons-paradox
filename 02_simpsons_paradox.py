@@ -103,12 +103,12 @@ for mode in ["human_both", "agent_draft", "fully_auto", "human_draft_agent_commi
     if len(sub) >= 10:
         print(f"{mode:<28} {sub['merged'].mean():<10.3f} {len(sub)}")
 
-# === RESULT 4: Multi-Agent Repos (Null Result) ===
+# === RESULT 4: Multi-Agent Repos ===
 print("\n" + "=" * 60)
-print("RESULT 4: Multi-Agent Repo Adoption (Null Result)")
+print("RESULT 4: Multi-Agent Repo Adoption")
 print("=" * 60)
 
 repo_agents = pr.groupby("repo_url")["agent"].nunique()
 multi_repos = repo_agents[repo_agents >= 2]
 print(f"Multi-agent repos: {len(multi_repos)}")
-print(f"No significant treatment effect found (p=0.31 in prior analysis)")
+print(f"See 03_rq3_did_regression.py for full DiD analysis")
